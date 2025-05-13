@@ -9,5 +9,5 @@ urlpatterns = [
     path('courseByAge/', views.courseByAge,name='courseByAge'),
     path('courseByCategory/', views.courseByCategory,name='courseByCategory'),
     path('application/<str:course_id>', views.StudentApplication,name='application'),
-    
+    path('application/<int:course_id>/', views.StudentApplication, name='submit'),
 ]
