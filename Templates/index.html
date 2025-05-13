@@ -61,7 +61,8 @@
 
                             
                             <div class="facility-text bg-primary text-center">
-                                <a href="/students/courseByAge/5-7/" class="text-primary fw-bold" style="text-decoration: none;">
+                                
+                                <a href="{% url 'courses_age' '5-7' %}" class="text-primary fw-bold" style="text-decoration: none;">
                                     <h3 class="text-primary mb-3 fs-1">
                                         <span class="d-block">5 - 7</span>
                                         <span class="d-block">Years</span>
@@ -78,7 +79,7 @@
                                 <span class="bg-success"></span>
                             </div>
                             <div class="facility-text bg-success">
-                            <a href="/students/courseByAge/7-9/" class="text-primary fw-bold" style="text-decoration: none;">
+                            <a href="{% url 'courses_age' '7-9' %}" class="text-primary fw-bold" style="text-decoration: none;">
 
                                 <h3 class="text-primary mb-3 fs-1">
                                     <span class="d-block">7 - 9</span>
@@ -96,7 +97,7 @@
                                 <span class="bg-warning"></span>
                             </div>
                             <div class="facility-text bg-warning">
-                            <a href="/students/courseByAge/9-11/" class="text-primary fw-bold" style="text-decoration: none;">
+                            <a href="{% url 'courses_age' '9-11' %}" class="text-primary fw-bold" style="text-decoration: none;">
 
                                 <h3 class="text-primary mb-3 fs-1">
                                     <span class="d-block">9 - 11</span>
@@ -115,7 +116,7 @@
                                 <span class="bg-info"></span>
                             </div>
                             <div class="facility-text bg-info">
-                             <a href="/students/courseByAge/11-13/" class="text-primary fw-bold" style="text-decoration: none;">
+                             <a href="{% url 'courses_age' '11+' %}" class="text-primary fw-bold" style="text-decoration: none;">
 
                                 <h3 class="text-primary mb-3 fs-1">
 
@@ -149,7 +150,7 @@
                         </div>
                         <div class="bg-light rounded p-4 pt-5 mt-n5">
                             
-                            <a class="d-block text-center h3 mt-3 mb-4" href="/students/courseByCategory/Programming/">PROGRAMMING</a>
+                            <a class="d-block text-center h3 mt-3 mb-4" href="{% url 'courses_category' 'Programming' %}">PROGRAMMING</a>
                             
        
                         </div>
@@ -161,7 +162,7 @@
                             <img class="img-fluid rounded-circle" src="{% static 'img/classes-2.jpg' %}" alt="">
                         </div>
                         <div class="bg-light rounded p-4 pt-5 mt-n5">
-                            <a class="d-block text-center h3 mt-3 mb-4" href="/students/courseByCategory/Robotics/">ROBOTICS</a>
+                            <a class="d-block text-center h3 mt-3 mb-4" href="{% url 'courses_category' 'Robotics' %}">ROBOTICS</a>
                             
                         </div>
                     </div>
@@ -172,7 +173,7 @@
                             <img class="img-fluid rounded-circle" src="{% static 'img/classes-3.jpg' %}" alt="">
                         </div>
                         <div class="bg-light rounded p-4 pt-5 mt-n5">
-                            <a class="d-block text-center h3 mt-3 mb-4" href="/students/courseByCategory/Strong%20Mind/">STRONG MIND</a>
+                            <a class="d-block text-center h3 mt-3 mb-4" href="{% url 'courses_category' 'Strong Mind' %}">STRONG MIND</a>
                             
                         </div>
                     </div>
