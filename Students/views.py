@@ -13,8 +13,15 @@ from django.http import JsonResponse
 from django.template.loader import render_to_string
 
 
-def courses(request):
-    courses=Courses.objects.all().order_by('is_active')
+def courses(request,age=None,category=None):
+    print('age',age)
+    if age:
+        print("age  ---- if")
+        courses=Courses.objects.filter(age__contains=age).order_by('is_active')
+    elif category:
+        courses=Courses.objects.filter(category=category).order_by('is_active')
+    else:
+        courses=Courses.objects.all().order_by('is_active')
     context={'coursesList':courses}
     return render (request,'StudentsApp/courses.html',context)
 
