@@ -8,7 +8,7 @@ from common_App.models import Courses, OngoingCourses
 from django.http import HttpResponse, HttpResponseRedirect
 #from django.urls import reverse
 from common_App.models import *
-from django import redirect
+
 from django.http import JsonResponse
 from django.template.loader import render_to_string
 
