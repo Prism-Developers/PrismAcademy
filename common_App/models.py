@@ -146,7 +146,9 @@ class Student(models.Model):
     address       = models.TextField(max_length=200,null=True)
     studentID     = models.IntegerField(null=True)
     Enrolled_Course        = models.ManyToManyField(OngoingCourses)
-    #course        = models.ManyToManyField(Courses)
+    paid_fees         = models.BooleanField(default=False)
+    paying_image           = models.ImageField(upload_to='student_images/', null=True, blank=True)
+
 
 
     def __str__(self):
