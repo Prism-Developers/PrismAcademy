@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'common_App',
     #'django_extensions',
     'multiselectfield',
+    'import_export',
 ]
 
 MIDDLEWARE = [
