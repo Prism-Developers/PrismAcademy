@@ -16,7 +16,6 @@ from django.template.loader import render_to_string
 def courses(request,age=None,category=None):
     print('age',age)
     if age:
-        print("age  ---- if")
         courses=Courses.objects.filter(age__contains=age).order_by('is_active')
     elif category:
         courses=Courses.objects.filter(category=category).order_by('is_active')
@@ -56,7 +55,9 @@ def StudentApplication(request, course_id):
 
 def courseDetails(request,course_id):
     course_details=Courses.objects.get(id=course_id)
-    context={'course':course_details}
+    ongoing_course=OngoingCourses.objects.filter(courseID=course_id)
+   
+    context={'course':course_details,'ongoing_course':ongoing_course}
     return render (request,'StudentsApp/CourseDetails.html',context)
 
 

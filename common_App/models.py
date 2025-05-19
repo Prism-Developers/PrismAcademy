@@ -1,6 +1,6 @@
 from django.db import models
 
-
+import datetime
 
 from multiselectfield import MultiSelectField # type: ignore
 
@@ -103,7 +103,6 @@ class Instractor(models.Model):
     name          = models.CharField(max_length=50,null=True)
     phone         = models.IntegerField(null=True)
     location      = models.CharField(max_length=50,null=True)
-    paymentMethod = models.CharField(max_length=20,null=True)
     courses       = models.ManyToManyField(Courses)
 
     def __str__(self):
@@ -112,17 +111,27 @@ class Instractor(models.Model):
 
 
 class OngoingCourses(models.Model):
-
+  WEEKDAYS = [
+        ('MON', 'Monday'),
+        ('TUE', 'Tuesday'),
+        ('WED', 'Wednesday'),
+        ('THU', 'Thursday'),
+        ('FRI', 'Friday'),
+        ('SAT', 'Saturday'),
+        ('SUN', 'Sunday'),
+    ]
   courseID       = models.ForeignKey(Courses,null=True,blank=True,on_delete=models.SET_NULL)
   instractor     = models.ForeignKey(Instractor,null=True,blank=True,on_delete=models.SET_NULL)
   location       = models.ForeignKey(Centers,null=True,blank=True,on_delete=models.SET_NULL)
-  WeekDay        = models.CharField(max_length=50,null=True)
+  WeekDay        = models.CharField(max_length=3, choices=WEEKDAYS, default='MON')
+  start_time = models.TimeField(default=datetime.time(0, 0))
+  end_time   = models.TimeField(default=datetime.time(0, 0))
   startDate      = models.DateField()
   paymentMethod  = models.CharField(max_length=20,null=True)
   sessionNumber  = models.IntegerField(null=True)
 
   def __str__(self):
-        return self.name  
+        return f"{self.courseID} on {self.get_WeekDay_display()} at {self.start_time}"
   
 
 
