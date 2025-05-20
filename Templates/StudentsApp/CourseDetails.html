@@ -44,8 +44,12 @@
 
           <div class="mb-4">
             <h5 class="mb-4">What you'll learn</h5>
+            <ul style="list-style-type: square;">
             {% for line in course.what_you_will_learn.splitlines %}
-              <div style="white-space: pre;">{{ line }}</div>
+            <li>
+                  {{ line }} <br />
+                </li>
+              {% comment %} <div style="white-space: pre;">{{ line }}</div> {% endcomment %}
             {% endfor %}
           </div>
 
@@ -83,7 +87,7 @@
         </div>
       </div>
       <div class="row g-5 align-items-center">
-        <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.1s">
          
 
           <h4 class="mb-4" style="font-family:sans-serif">Start your kid's Journey </h4>
@@ -95,6 +99,8 @@
                 <th>Day</th>
                 <th>Time</th>
                 <th>Location</th>
+                <th>Price</th>
+                <th>Student's Age</th>
                 <th></th>
               </tr>
             </thead>
@@ -105,6 +111,9 @@
                 <td>{{course.WeekDay}}</td>
                 <td>{{course.start_time}} - {{course.end_time}}</td>
                 <td >{{course.location}}</td>
+                <td >{{course.courseID.price}} egp</td>
+                <td ><b>{{course.age}}</b></td>
+                
                 <td>
                   <a class="btn btn-primary rounded-pill py-1 px-3" href="{% url 'application' course.id %}">Enroll now</a>
                 </td>
