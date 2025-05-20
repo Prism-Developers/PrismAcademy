@@ -59,8 +59,7 @@
         background-color: #128c7e;
       }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
 
   <body>
@@ -73,63 +72,58 @@
       </div>
       <!-- Spinner End -->
 
-        <!-- Navbar Start -->
-        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
-            <a href="index.html" class="navbar-brand">
-                <h1 class="m-0 text-primary"><img src="{% static 'img/logo.png' %}" class="icon-img"></h1>
-            </a>
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav mx-auto">
-                    <a href="{% url 'home' %} "class="nav-item nav-link active">Home</a>
-                   
-                    <a href="{% url 'courses' %}" class="nav-item nav-link">Courses</a>
-                    
-                    <a href="{% url 'application' 1 %}" class="nav-item nav-link">Join Us</a>
-                </div>
-                <a href="{% url 'login' %}" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Contact Us<i class="fa fa-arrow-right ms-3"></i></a>
-            </div>
-        </nav>
-        <!-- Navbar End -->
+      <!-- Navbar Start -->
+      <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
+        <a href="index.html" class="navbar-brand"><h1 class="m-0 text-primary"><img src="{% static 'img/logo.png' %}" class="icon-img" /></h1></a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav mx-auto">
+            <a href="{% url 'home' %} " class="nav-item nav-link active">Home</a>
 
+            <a href="{% url 'courses' %}" class="nav-item nav-link">Courses</a>
 
+            <a href="{% url 'application' 1 %}" class="nav-item nav-link">Join Us</a>
+          </div>
+          <a href="{% url 'login' %}" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Contact Us<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+      </nav>
+      <!-- Navbar End -->
 
       {% block content1 %}
 
-        {% endblock content1%}
+      {% endblock %}
 
+      <!-- Footer Start -->
+      <div class="container-fluid bg-dark text-white-50 footer pt-2 mt-2 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-2">
+          <div class="row g-3">
+            <div class="col-lg-0 col-md-6">
+              <h3 class="text-white mb-4">Get In Touch</h3>
 
-
-        <!-- Footer Start -->
-        <div class="container-fluid bg-dark text-white-50 footer pt-2 mt-2 wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-2">
-                <div class="row g-3">
-                    <div class="col-lg-0 col-md-5">
-                        <h3 class="text-white mb-4">Get In Touch</h3>
-                        
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+01025836649</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>prism.school.eg@gmail.com</p>
-                        <div class="d-flex pt-2">
-                            
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-whatsapp"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    
-                    
-                    
-                </div>
+              <p class="mb-2">
+                <i class="fa fa-phone-alt me-3"></i>+01025836649
+              </p>
+              <p class="mb-2">
+                <i class="fa fa-envelope me-3"></i>prism.school.eg@gmail.com
+              </p>
+              <div class="d-flex pt-2">
+                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-whatsapp"></i></a>
+                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+              </div>
             </div>
             
+            <div class="col-lg-0 col-md-6" style="text-align: right;">
+              <img src="{% static 'img/logo_white.png' %}"  style="width: 300px; height: auto;" />
+            </div>
+          </div>
         </div>
-        <!-- Footer End -->
+      </div>
+      <!-- Footer End -->
 
+      <a href="https://wa.me/+201025836649" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-        <!-- Back to Top -->
-       
+      <!-- Back to Top -->
     </div>
 
     <!-- JavaScript Libraries -->
