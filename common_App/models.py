@@ -92,6 +92,7 @@ class Courses(models.Model):
   category = models.CharField(max_length=50,choices=category,null=True)
   image         = models.ImageField(null=True,blank=True)
   is_active     = models.CharField(max_length=50,choices=is_active,null=True)
+  hours_per_month = models.IntegerField(null=True)
 
   def __str__(self):
         return self.name  
@@ -119,10 +120,18 @@ class OngoingCourses(models.Model):
         ('SAT', 'Saturday'),
         ('SUN', 'Sunday'),
     ]
+  age = [
+      ("5-7","5-7"),
+      ("7-9","7-9"),
+      ("9-11","9-11"),
+      ("11-13","11-13"),
+      ("13+","13+")
+  ]
   courseID       = models.ForeignKey(Courses,null=True,blank=True,on_delete=models.SET_NULL)
   instractor     = models.ForeignKey(Instractor,null=True,blank=True,on_delete=models.SET_NULL)
   location       = models.ForeignKey(Centers,null=True,blank=True,on_delete=models.SET_NULL)
   WeekDay        = models.CharField(max_length=3, choices=WEEKDAYS, default='MON')
+  age        = models.CharField(max_length=6, choices=age, default='5-7')
   start_time = models.TimeField(default=datetime.time(0, 0))
   end_time   = models.TimeField(default=datetime.time(0, 0))
   startDate      = models.DateField()
