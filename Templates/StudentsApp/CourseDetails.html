@@ -106,11 +106,11 @@
             <tbody>
               {% for course in ongoing_course %}
               <tr>
-                <td>{{course.startDate}}</td>
+                <td>{{course.startDate|date:"d-M"}}</td>
                 <td>{{course.WeekDay}}</td>
-                <td>{{course.start_time}} - {{course.end_time}}</td>
+                <td>{{course.start_time}}</td>
                 <td >{{course.location}}</td>
-                <td >{{course.courseID.price}} egp</td>
+                <td >{{course.courseID.price}}</td>
                 <td ><b>{{course.age}}</b></td>
                 
                 <td>
