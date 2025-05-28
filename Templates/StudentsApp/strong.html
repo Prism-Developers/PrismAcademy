@@ -124,30 +124,28 @@
             <table class="table table-hover">
               <thead>
                 <tr>
+                  <th></th>
+                  <th>العمر</th>
                   <th>البداية</th>
                   <th>اليوم</th>
                   <th>الساعة</th>
                   <th>المكان</th>
                   <th>السعر</th>
-                  <th>العمر</th>
-                  <th></th>
+                  
                 </tr>
               </thead>
               <tbody>
                 {% for course in ongoing_course %}
                   <tr>
+                    
+                    <td><a class="btn btn-primary rounded-pill py-1 px-3" href="{% url 'application' course.id %}">اشترك الآن</a></td>
+                    <td><b>{{ course.age }}</b></td>
                     <td>{{ course.startDate|date:'d-M' }}</td>
                     <td>{{ course.WeekDay }}</td>
                     <td>{{ course.start_time }}</td>
                     <td>{{ course.location }}</td>
                     <td>{{ course.courseID.price }}</td>
-                    <td>
-                      <b>{{ course.age }}</b>
-                    </td>
-
-                    <td>
-                      <a class="btn btn-primary rounded-pill py-1 px-3" href="{% url 'application' course.id %}">اشترك الآن</a>
-                    </td>
+                    
                   </tr>
                 {% endfor %}
               </tbody>
